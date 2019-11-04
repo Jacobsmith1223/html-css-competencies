@@ -1,12 +1,38 @@
+:root{
+  --jakes-color:#da94e4;
+}
+/* Pseudo Selectors */
+.the-title:hover{
+  color:blue;
+  font-size:100px;
+}
+
+.red:focus{
+  background:red;
+  color:white;
+}
+input[type="checkbox"]:disabled{
+  background:grey;
+}
+
+:nth-child(2){
+  background:chartreuse;
+}
+
 .main-page{
   height:100vh;
   width:100vw;
 }
-
+/* CSS variable & CSS flexbox */
 .header{
   width:100vw;
   height:10vh;
-  background:#3355ff;
+  background:var(--jakes-color);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:row;
+  flex-wrap:nowrap;
 }
 
 .big-section{
@@ -34,6 +60,73 @@ h1 + p{
   font-size:60px;
 }
 
+
 section article{
   color:green;
+}
+/* CSS Grid */
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  height:100px;
+  width: 100px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+@media(max-width: 414px){
+  .main-page{
+    height:100vh;
+    width:100vw;
+  }
+  
+  .header{
+    width:100vw;
+    height:10vh;
+    background:#3355ff;
+  }
+  
+  .big-section{
+    width:100vw;
+    height:75vh;
+  }
+  
+  .feet{
+    width:100vw;
+    height:10vh;
+    background:#858a9e;
+  }
+  
+  h1 + p{
+    color:pink;
+    font-size:20px;
+  }
+  
+  .feet > h1{
+    color:white;
+    font-size:30px
+  }
+  
+  #article{
+    font-size:60px;
+  }
+  
+  
+  section article{
+    color:rgb(190, 51, 179);
+  }
+}
+
+@media print{
+  .header{background:black;}
+  .footer{background:yellow}
 }
